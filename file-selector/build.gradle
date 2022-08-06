@@ -34,8 +34,8 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.6.0'
+    compileOnly 'androidx.appcompat:appcompat:1.4.2'
+    compileOnly 'com.google.android.material:material:1.6.1'
 }
 
 afterEvaluate {
@@ -45,7 +45,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.lyni.file.selector'
                 artifactId = 'file-selector'
-                version = '1.0.0-alpha1'
+                version = '1.0.0-alpha2'
             }
         }
     }

@@ -1,6 +1,6 @@
 package com.lyni.file.selector
 
-import android.content.Intent
+import android.net.Uri
 
 /**
  * @date 2022/6/1
@@ -8,5 +8,5 @@ import android.content.Intent
  * description FileSelectCallBack
  */
 interface FileSelectCallBack {
-    fun onResult(data: Intent)
+    fun onResult(data: Uri)
 }

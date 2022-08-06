@@ -1,7 +1,6 @@
 package com.lyni.file.selector
 
 import android.app.Dialog
-import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -138,7 +137,7 @@ class FileSelectDialog : DialogFragment(), FileAdapter.CallBack {
     }
 
     private fun setData(path: String) {
-        val data = Intent().setData(Uri.fromFile(File(path)))
+        val data = Uri.fromFile(File(path))
         (parentFragment as? FileSelectCallBack)?.onResult(data)
         (activity as? FileSelectCallBack)?.onResult(data)
     }

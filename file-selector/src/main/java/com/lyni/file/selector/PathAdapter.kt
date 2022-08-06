@@ -2,7 +2,6 @@ package com.lyni.file.selector
 
 import android.annotation.SuppressLint
 import android.os.Environment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -37,7 +36,6 @@ class PathAdapter(private val onPathClicked: (position: Int) -> Unit) :
     fun updatePath(path: String) {
         var path1 = path
         path1 = path1.replace(sdCardDirectory, "")
-        Log.e("TAG", "updatePath: $path1")
         paths.clear()
         paths.add(ROOT_HINT)
         if (path1 != "/" && path1 != "") {

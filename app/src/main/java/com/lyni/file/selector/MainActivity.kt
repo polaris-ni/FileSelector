@@ -1,11 +1,12 @@
 package com.lyni.file.selector
 
-import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.lyni.permission.QuickPermission
+import com.lyni.permission.core.Permissions
 
 class MainActivity : AppCompatActivity(), FileSelectCallBack {
 
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity(), FileSelectCallBack {
         setContentView(R.layout.activity_main)
 
         findViewById<TextView>(R.id.tvTest).setOnClickListener {
-            QuickPermission.with(this).onGranted {
+            QuickPermission.with(this).addPermissions(Permissions.READ_EXTERNAL_STORAGE).onGranted {
                 FileSelectDialog.show(supportFragmentManager, isShowHideDir = true)
             }.onDenied {
                 Log.e(TAG, "onCreate: $it")
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity(), FileSelectCallBack {
         }
     }
 
-    override fun onResult(data: Intent) {
-        Log.e(TAG, "onResult: ${data.data}")
+    override fun onResult(data: Uri) {
+        Log.e(TAG, "onResult: $data")
     }
 }

@@ -4,7 +4,6 @@ package com.lyni.file.selector
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -83,7 +82,6 @@ class FileAdapter(private val context: Context, private val callBack: CallBack) 
         holder.tvItem.apply {
             text = item.name
             setCompoundDrawables(getDrawable(item.type.resId), null, null, null)
-            Log.e("TAG", "onBindViewHolder: ${holder.tvItem.layoutParams}")
         }
         holder.itemView.setOnClickListener {
             callBack.onFileClick(holder.layoutPosition)
