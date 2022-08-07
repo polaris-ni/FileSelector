@@ -11,6 +11,9 @@
         <entry key="..\:/Data/Projects/AndroidStudioProjects/Dev/FileSelector/file-selector/src/main/res/layout/dialog_file_select.xml" value="0.2171875" />
         <entry key="..\:/Data/Projects/AndroidStudioProjects/Dev/FileSelector/file-selector/src/main/res/layout/item_file.xml" value="0.23125" />
         <entry key="..\:/Data/Projects/AndroidStudioProjects/Dev/FileSelector/file-selector/src/main/res/layout/item_path_filepicker.xml" value="0.2171875" />
+        <entry key="..\:/Data/Projects/AndroidStudioProjects/Dev/FileSelector/lib/src/main/res/drawable/ic_file_db.xml" value="0.167" />
+        <entry key="..\:/Data/Projects/AndroidStudioProjects/Dev/FileSelector/lib/src/main/res/drawable/ic_file_pdf.xml" value="0.1005" />
+        <entry key="..\:/Data/Projects/AndroidStudioProjects/Dev/FileSelector/lib/src/main/res/layout/item_path_filepicker.xml" value="0.2359375" />
       </map>
     </option>
   </component>

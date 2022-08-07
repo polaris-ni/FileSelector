@@ -34,8 +34,9 @@ android {
 }
 
 dependencies {
-    compileOnly 'androidx.appcompat:appcompat:1.4.2'
-    compileOnly 'com.google.android.material:material:1.6.1'
+    compileOnly 'androidx.fragment:fragment-ktx:1.4.1'
+    compileOnly 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation "androidx.annotation:annotation:1.3.0"
 }
 
 afterEvaluate {
@@ -43,9 +44,9 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.lyni.file.selector'
+                groupId = 'com.treasure.file.selector'
                 artifactId = 'file-selector'
-                version = '1.0.0-alpha2'
+                version = '1.0.1-beta1'
             }
         }
     }

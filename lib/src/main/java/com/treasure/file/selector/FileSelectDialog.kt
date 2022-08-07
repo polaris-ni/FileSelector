@@ -1,4 +1,4 @@
-package com.lyni.file.selector
+package com.treasure.file.selector
 
 import android.app.Dialog
 import android.net.Uri
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
-import com.lyni.file.selector.databinding.DialogFileSelectBinding
+import com.treasure.file.selector.databinding.DialogFileSelectBinding
 import java.io.File
 
 /**

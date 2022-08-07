@@ -1,4 +1,4 @@
-package com.lyni.file.selector
+package com.treasure.file.selector
 
 
 import android.annotation.SuppressLint
@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.lyni.treasure.lib.common.components.file.FileTypeDetector
 import java.io.File
 
 

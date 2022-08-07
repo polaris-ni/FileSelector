@@ -1,17 +1,16 @@
-package com.lyni.file.selector
+package com.treasure.file.selector
 
 import android.icu.text.Collator
 import android.icu.util.ULocale
 import android.os.Environment
 import android.webkit.MimeTypeMap
-import androidx.annotation.IntDef
 import java.io.*
 import java.nio.charset.Charset
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.regex.Pattern
 
-internal object FileUtils {
+object FileUtils {
 
     fun getSdCardPath(): String {
         var sdCardDirectory = Environment.getExternalStorageDirectory().absolutePath
@@ -32,10 +31,6 @@ internal object FileUtils {
     const val BY_EXTENSION_ASC = 6
     const val BY_EXTENSION_DESC = 7
 
-    @IntDef(value = [BY_NAME_ASC, BY_NAME_DESC, BY_TIME_ASC, BY_TIME_DESC, BY_SIZE_ASC, BY_SIZE_DESC, BY_EXTENSION_ASC, BY_EXTENSION_DESC])
-    @kotlin.annotation.Retention(AnnotationRetention.SOURCE)
-    annotation class SortType
-
     private fun closeSilently(c: Closeable?) {
         if (c == null) {
             return
@@ -53,7 +48,7 @@ internal object FileUtils {
     @JvmOverloads
     fun listDirs(
         startDirPath: String,
-        excludeDirs: Array<String>? = null, @SortType sortType: Int = BY_NAME_ASC
+        excludeDirs: Array<String>? = null, sortType: Int = BY_NAME_ASC
     ): Array<File> {
         var excludeDirs1 = excludeDirs
         val dirList = ArrayList<File>()
@@ -77,7 +72,6 @@ internal object FileUtils {
             }
         }
         when (sortType) {
-            BY_NAME_ASC -> Collections.sort(dirList, SortByName())
             BY_NAME_DESC -> {
                 Collections.sort(dirList, SortByName())
                 dirList.reverse()
@@ -97,6 +91,7 @@ internal object FileUtils {
                 Collections.sort(dirList, SortByExtension())
                 dirList.reverse()
             }
+            else -> Collections.sort(dirList, SortByName())
         }
         return dirList.toTypedArray()
     }
@@ -128,7 +123,7 @@ internal object FileUtils {
     @JvmOverloads
     fun listFiles(
         startDirPath: String,
-        filterPattern: Pattern? = null, @SortType sortType: Int = BY_NAME_ASC
+        filterPattern: Pattern? = null, sortType: Int = BY_NAME_ASC
     ): Array<File> {
         val fileList = ArrayList<File>()
         val f = File(startDirPath)
@@ -150,7 +145,6 @@ internal object FileUtils {
             fileList.add(file.absoluteFile)
         }
         when (sortType) {
-            BY_NAME_ASC -> Collections.sort(fileList, SortByName())
             BY_NAME_DESC -> {
                 Collections.sort(fileList, SortByName())
                 fileList.reverse()
@@ -170,6 +164,7 @@ internal object FileUtils {
                 Collections.sort(fileList, SortByExtension())
                 fileList.reverse()
             }
+            else -> Collections.sort(fileList, SortByName())
         }
         return fileList.toTypedArray()
     }
@@ -649,9 +644,10 @@ internal object FileUtils {
 
     }
 
-    fun cnCompare(str: String, other: String) = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-        Collator.getInstance(ULocale.SIMPLIFIED_CHINESE).compare(str, other)
-    } else {
-        java.text.Collator.getInstance(Locale.CHINA).compare(str, other)
-    }
+    fun cnCompare(str: String, other: String) =
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            Collator.getInstance(ULocale.SIMPLIFIED_CHINESE).compare(str, other)
+        } else {
+            java.text.Collator.getInstance(Locale.CHINA).compare(str, other)
+        }
 }

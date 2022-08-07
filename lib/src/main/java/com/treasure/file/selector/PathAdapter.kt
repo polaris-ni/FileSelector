@@ -1,4 +1,4 @@
-package com.lyni.file.selector
+package com.treasure.file.selector
 
 import android.annotation.SuppressLint
 import android.os.Environment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import com.lyni.file.selector.databinding.ItemPathFilepickerBinding
+import com.treasure.file.selector.databinding.ItemPathFilepickerBinding
 import java.util.*
 
 

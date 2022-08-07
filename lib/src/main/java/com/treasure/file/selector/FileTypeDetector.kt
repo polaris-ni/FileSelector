@@ -1,6 +1,4 @@
-package com.lyni.treasure.lib.common.components.file
-
-import com.lyni.file.selector.FileType
+package com.treasure.file.selector
 
 
 /**

@@ -1,10 +1,13 @@
-package com.lyni.file.selector
+package com.lyni.file.selector.test
 
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.treasure.file.selector.FileSelectCallBack
+import com.treasure.file.selector.FileSelectDialog
+import com.lyni.file.selector.R
 import com.lyni.permission.QuickPermission
 import com.lyni.permission.core.Permissions
 

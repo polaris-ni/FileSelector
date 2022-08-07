@@ -1,4 +1,4 @@
-package com.lyni.file.selector
+package com.treasure.file.selector
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntRange
